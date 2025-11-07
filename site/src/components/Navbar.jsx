@@ -1,19 +1,16 @@
-import logo from "../assets/toca.jpeg";
-
 export default function Navbar() {
   return (
     <header style={styles.header}>
       <div style={styles.brand}>
         <span style={styles.title}>Toca dos Tatus</span>
-        <img src={logo} alt="Logo Toca dos Tatus" style={styles.logo} />
       </div>
 
       <nav style={styles.nav}>
-        <a style={styles.link} href="#sobre">Sobre nós</a>
-        <a style={styles.link} href="#adotar">Quero Adotar</a>
-        <a style={styles.link} href="#loja">Loja</a>
-        <a style={styles.link} href="#voluntario">Seja Voluntário</a>
-        <a style={styles.link} href="#contato">Contato</a>
+        <a className="nav-link" href="#sobre">Sobre nós</a>
+        <a className="nav-link" href="#adotar">Quero Adotar</a>
+        <a className="nav-link" href="#loja">Loja</a>
+        <a className="nav-link" href="#voluntario">Seja Voluntário</a>
+        <a className="nav-link" href="#contato">Contato</a>
       </nav>
     </header>
   );
@@ -41,15 +38,9 @@ const styles = {
     paddingLeft: "20px", 
   },
 
-  logo: {
-    width: "80px",
-    height: "80px",
-    objectFit: "contain",
-  },
-
   title: {
     fontFamily: "'Julius Sans One', sans-serif",
-    fontSize: "26px",
+    fontSize: "30px",
     color: "#FFFFFF",
     letterSpacing: "1px",
   },

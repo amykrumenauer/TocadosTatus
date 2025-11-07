@@ -3,13 +3,67 @@ body {
   padding: 0;
 }
 
-nav a {
-  color: #ffffff;
+.nav-link {
+  color: #FFFFFF;
   text-decoration: none;
-  transition: 0.3s;
-  font-size: 15px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #00CDA8; 
+/* Hover */
+.nav-link:hover {
+  color: #FFBB00;
+}
+
+.hero {
+  width: 100%;
+  min-height: 90vh;
+  background: url("../assets/patas.png"); /* coloque seu fundo de patinhas */
+  background-size: contain;
+  background-repeat: repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-family: "Flamenco", sans-serif;
+  font-size: 48px;
+  color: #261B1B;
+  margin: 0;
+}
+
+.hero-text p {
+  margin-top: 12px;
+  font-family: "Flamenco", sans-serif;
+  font-size: 22px;
+  color: #261B1B;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #FFBB00;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #261B1B;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #e0a700;
+}
+
+.hero-img img {
+  width: 380px;
+  height: auto;
 }
