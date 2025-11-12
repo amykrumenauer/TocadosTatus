@@ -67,3 +67,73 @@ body {
   width: 380px;
   height: auto;
 }
+
+/* ======== SEÇÃO SOBRE ======== */
+.sobre-section {
+  background-color: #261b1b;
+  color: #ffffff;
+  padding: 70px 10%;
+  font-family: 'Flamenco', cursive;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.sobre-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* <-- adicione esta linha */
+}
+
+
+.sobre-texto {
+  flex: 1;
+  z-index: 2;
+}
+
+.sobre-texto h2 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffbb00;
+}
+
+.sobre-texto p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sobre-imagem {
+  flex: 1;
+  text-align: right;
+  position: relative;
+  z-index: 2;
+}
+
+.sobre-imagem img {
+  width: 400px;
+  border-radius: 40px;
+  position: relative;
+  z-index: 3;
+}
+
+.pata-bg {
+  position: absolute;
+  top: 0px;
+  left: 350px;
+  width: 700px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.sobre-footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 22px;
+  color: #ffffff;
+}
