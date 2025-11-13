@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Sobre from "./components/Sobre";
+import QueroAdotar from "./components/QueroAdotar";
 import "./index.css";
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Sobre />
+      <QueroAdotar />
     </>
   );
 }

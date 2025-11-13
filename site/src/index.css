@@ -72,7 +72,7 @@ body {
 .sobre-section {
   background-color: #261b1b;
   color: #ffffff;
-  padding: 70px 10%;
+  padding: 150px 10%;
   font-family: 'Flamenco', cursive;
   position: relative;
   width: 100%;
@@ -84,7 +84,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 100px;
+  gap: 150px;
   flex-wrap: wrap;
   flex-direction: row-reverse; /* <-- adicione esta linha */
 }
@@ -99,7 +99,7 @@ body {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 36px;
   margin-bottom: 20px;
-  color: #ffbb00;
+  color: #00C29F;
 }
 
 .sobre-texto p {
@@ -136,4 +136,83 @@ body {
   margin-top: 60px;
   font-size: 22px;
   color: #ffffff;
+}
+
+/* --- SEÇÃO QUERO ADOTAR --- */
+
+.adotar-section {
+  background-color: #fff;
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.adotar-titulo {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 40px;
+  color: #FFBB00;
+  margin-bottom: 30px;
+}
+
+.adotar-texto {
+  font-family: 'Flamenco', cursive;
+  font-size: 20px;
+  color: #261B1B;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+}
+
+/* Cards */
+.adotar-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background-color: #261B1B;
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  font-family: 'Flamenco', cursive;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #FFBB00;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Botão */
+.botao-adotar {
+  display: inline-block;
+  background-color: #FFBB00;
+  color: #261B1B;
+  font-family: 'Julius Sans One', sans-serif;
+  padding: 15px 35px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.botao-adotar:hover {
+  background-color: #261B1B;
+  color: #FFBB00;
+  transform: scale(1.05);
 }
