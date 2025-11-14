@@ -141,9 +141,16 @@ body {
 /* --- SEÇÃO QUERO ADOTAR --- */
 
 .adotar-section {
+  position: relative; /* <-- ESSENCIAL para o fundo funcionar */
   background-color: #fff;
   padding: 100px 60px;
   text-align: center;
+  overflow: hidden; /* mantém o fundo no lugar */
+}
+
+.adotar-section * {
+  position: relative;
+  z-index: 2;
 }
 
 .adotar-titulo {
@@ -216,3 +223,17 @@ body {
   color: #FFBB00;
   transform: scale(1.05);
 }
+
+.patinhas-bg {
+  background-image: url("../assets/patas.png");
+  background-repeat: repeat;
+  background-size: 250px; /* ajuste o tamanho aqui */
+  opacity: 0.08;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+

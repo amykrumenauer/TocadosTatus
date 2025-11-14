@@ -18,8 +18,7 @@ export default function Hero() {
 
         <div style={styles.buttonContainer}>
           <a
-            href="https://forms.gle/2Qo2NvGUcr8k3ED18"
-            target="_blank"
+            href="#adotar"
             rel="noopener noreferrer"
             style={{
               ...styles.button,

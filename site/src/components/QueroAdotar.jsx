@@ -1,10 +1,38 @@
 import "../index.css";
+import pata from "../assets/patas.png"; // imagem da pata grande
 
 export default function QueroAdotar() {
   return (
-    <section id="adotar" className="adotar-section">
-      <h2 className="adotar-titulo">Quero Adotar</h2>
-      <p className="adotar-texto">
+    <section
+      id="adotar"
+      style={{
+        position: "relative",
+        backgroundColor: "#fff",
+        padding: "100px 60px",
+        textAlign: "center",
+        overflow: "hidden",
+      }}
+    >
+      {/* 🔸 Pata grande atrás, igual Hero */}
+      <img
+        src={pata}
+        alt="Pata de fundo"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-40%, -50%)", // centraliza igual a Hero (pode ajustar)
+          width: "700px",                     // tamanho da pata (ajustável)
+          opacity: 0.07,
+          zIndex: 0,
+        }}
+      />
+
+      <h2 className="adotar-titulo" style={{ position: "relative", zIndex: 1 }}>
+        Quero Adotar
+      </h2>
+
+      <p className="adotar-texto" style={{ position: "relative", zIndex: 1 }}>
         Na Toca dos Tatus, acreditamos que os gatinhos devem ser escolhidos por conexão.
         O que isso quer dizer? Que apesar dos gatinhos disponíveis estarem públicos no
         nosso feed do Instagram e no destaque “Me Adota”, você deve vir pessoalmente
@@ -12,7 +40,7 @@ export default function QueroAdotar() {
         a vida toda — não dá pra escolher seu amor só por foto, né? Precisa dar match pessoalmente!
       </p>
 
-      <div className="adotar-cards">
+      <div className="adotar-cards" style={{ position: "relative", zIndex: 1 }}>
         <div className="card">
           <h3>Primeiro contato</h3>
           <p>
@@ -43,6 +71,7 @@ export default function QueroAdotar() {
         target="_blank"
         rel="noopener noreferrer"
         className="botao-adotar"
+        style={{ position: "relative", zIndex: 1 }}
       >
         Formulário de Adoção
       </a>
