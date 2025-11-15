@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Sobre from "./components/Sobre";
 import QueroAdotar from "./components/QueroAdotar";
+import Loja from "./components/Loja"
 import "./index.css";
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <Hero />
       <Sobre />
       <QueroAdotar />
+      <Loja />
     </>
   );
 }
