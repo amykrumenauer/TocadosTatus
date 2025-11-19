@@ -14,19 +14,7 @@ export default function QueroAdotar() {
       }}
     >
       {/* 🔸 Pata grande atrás, igual Hero */}
-      <img
-        src={pata}
-        alt="Pata de fundo"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-40%, -50%)", // centraliza igual a Hero (pode ajustar)
-          width: "700px",                     // tamanho da pata (ajustável)
-          opacity: 0.07,
-          zIndex: 0,
-        }}
-      />
+      <img src={pata} alt="Pata de fundo" className="patinhas-bg" />
 
       <h2 className="adotar-titulo" style={{ position: "relative", zIndex: 1 }}>
         Quero Adotar

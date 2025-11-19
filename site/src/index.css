@@ -278,20 +278,13 @@ body {
 }
 
 .patinhas-bg {
-  background-image: url("../assets/patas.png");
-  background-size: 250px;
-  background-repeat: repeat-x;
-  background-position: bottom;
-
-  opacity: 0.08;
-
   position: absolute;
-  bottom: -80px; /* AQUI funciona agora */
+  right: 350px;
+  
+  width: 650px;
+  height: auto;
 
-  left: 0;
-  width: 100%;
-  height: 300px; /* altura menor */
-
+  opacity: 0.12;
   z-index: 0;
   pointer-events: none;
 }
@@ -360,6 +353,8 @@ body {
   text-decoration: none;
   font-size: 18px;
   transition: 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 /* Hover do botão */
@@ -391,6 +386,7 @@ body {
   flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 60px;
+  z-index: 2; 
 }
 
 .vol-card {
@@ -402,6 +398,7 @@ body {
   font-family: 'Flamenco', cursive;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s;
+  z-index: 2; 
 }
 
 .vol-card:hover {
@@ -440,6 +437,8 @@ body {
   text-decoration: none;
   font-size: 18px;
   transition: 0.3s ease;
+  position: relative;
+  z-index: 2; 
 }
 
 .botao-voluntario:hover {
@@ -516,10 +515,85 @@ body {
 .icone:hover {
   transform: scale(1.15);
 }
+/* NAV DESKTOP */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #FFBB00;
+}
+
+/* ========== MENU HAMBÚRGUER ========== */
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px; /* evita que corte */
+  z-index: 1000;
+}
+
+.menu-btn span {
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Animação X */
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  /* ======== NAVBAR ======== */
+  /* ===== MENU ===== */
+  .menu-btn {
+    display: flex;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #261B1B;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+    display: none;
+    text-align: center;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+
   .header {
     padding: 0 10px;
     height: 70px;
@@ -529,16 +603,8 @@ body {
     font-size: 22px;
   }
 
-  .navbar {
-    gap: 18px;
-  }
 
-  .nav-link {
-    font-size: 14px;
-  }
-
-
-  /* ======== HERO ======== */
+  /* ===== HERO ===== */
   .hero {
     flex-direction: column;
     padding: 60px 20px;
@@ -569,14 +635,14 @@ body {
   }
 
   .hero-pata {
-    width: 350px;
+    width: 500px;
+    top: 50px;
     right: 0;
-    bottom: -20px;
     opacity: 0.1;
   }
 
 
-  /* ======== SOBRE ======== */
+  /* ===== SOBRE ===== */
   .sobre-section {
     padding: 60px 30px;
   }
@@ -601,15 +667,17 @@ body {
   }
 
   .pata-bg {
-    width: 350px;
-    left: 10%;
-    top: 30px;
+    width: 500px;
+    left: 1%;
+    bottom: 50px;
+    top: 550px;
   }
 
-
-  /* ======== ADOTAR ======== */
+  /* ===== ADOTAR ===== */
   .adotar-section {
     padding: 50px 20px;
+    position: relative;      /* <-- ESSENCIAL */
+    overflow: visible; 
   }
 
   .adotar-titulo {
@@ -626,13 +694,13 @@ body {
   }
 
   .patinhas-bg {
-    height: 180px;
-    bottom: -40px;
-    background-size: 180px;
+    width: 500px;
+    top: 700px;
+    right: 0;
+    opacity: 0.1;
   }
 
-
-  /* ======== LOJA ======== */
+  /* ===== LOJA ===== */
   .loja {
     padding: 60px 20px;
   }
@@ -650,13 +718,14 @@ body {
   }
 
   .loja-pata {
-    width: 350px;
-    left: 10%;
-    top: 20px;
+    width: 500px;
+    left: 1%;
+    bottom: 50px;
+    top: 50px;
   }
 
 
-  /* ======== VOLUNTARIADO ======== */
+  /* ===== VOLUNTARIADO ===== */
   .voluntario-section {
     padding: 60px 20px;
   }
@@ -675,19 +744,19 @@ body {
   }
 
   .voluntario-pata {
-    width: 350px;
-    left: 20%;
-    top: 10px;
+    width: 500px;
+    left: 1%;
+    bottom: 500px;
+    top: 250px;
   }
 
-
-  /* ======== CONTATO ======== */
+  /* ===== CONTATO ===== */
   #contato {
     padding: 40px 20px;
   }
 
   .patinha-fundo {
-    width: 300px;
+    width: 400px;
     left: 5%;
     opacity: 0.07;
   }
@@ -699,14 +768,16 @@ body {
   .contato-texto {
     font-size: 18px;
   }
-
   .contato-conteudo {
-    flex-direction: column;
     gap: 20px;
   }
 
   .contato-mapa iframe {
-    width: 280px;
-    height: 200px;
+    width: 250px;
+    height: 180px;
   }
-}
+
+  .icone {
+    font-size: 32px;
+  }
+} /* <-- FINAL DO @media */
