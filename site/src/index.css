@@ -3,80 +3,144 @@ body {
   padding: 0;
 }
 
+/* ======== NAVBAR ======== */
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #261B1B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Marca / Título */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 30px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+/* Navegação */
+.navbar {
+  display: flex;
+  gap: 32px;
+  padding-right: 30px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
 .nav-link {
   color: #FFFFFF;
   text-decoration: none;
-  font-family: 'Julius Sans One', sans-serif;
   font-size: 18px;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Hover */
 .nav-link:hover {
   color: #FFBB00;
 }
 
+/* ======== HERO ======== */
 .hero {
-  width: 100%;
-  min-height: 90vh;
-  background: url("../assets/patas.png"); /* coloque seu fundo de patinhas */
-  background-size: contain;
-  background-repeat: repeat;
+  position: relative;
+  background-color: #FFF9F3;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 60px 80px;
+  justify-content: center;
+  gap: 60px;
+
+  padding: 100px 80px;
+  overflow: hidden;
 }
 
+/* PATA DE FUNDO */
+.hero-pata {
+  position: absolute;
+  right: 350px;
+  bottom: -30px;
+
+  width: 650px;
+  height: auto;
+
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* TEXTO */
 .hero-text {
   max-width: 550px;
+  text-align: left;
+  z-index: 1; /* meio */
 }
 
-.hero-text h1 {
+.hero-title {
   font-family: "Flamenco", sans-serif;
   font-size: 48px;
   color: #261B1B;
   margin: 0;
 }
 
-.hero-text p {
+.hero-subtitle {
   margin-top: 12px;
   font-family: "Flamenco", sans-serif;
   font-size: 22px;
   color: #261B1B;
 }
 
+/* BOTÃO */
 .hero-btn {
   display: inline-block;
   margin-top: 30px;
-  background-color: #FFBB00;
-  padding: 14px 26px;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 40px;
+
+  background-color: #FFD447;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   color: #261B1B;
+
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .hero-btn:hover {
   background-color: #e0a700;
 }
 
-.hero-img img {
+/* IMAGEM DO GATO */
+.hero-img {
   width: 380px;
-  height: auto;
+  border-radius: 40px;
+
+  position: relative; /* AGORA O Z-INDEX FUNCIONA */
+  z-index: 2; /* fica NA FRENTE da pata */
 }
 
-/* ======== SEÇÃO SOBRE ======== */
+
+/* ======== SOBRE ======== */
 .sobre-section {
   background-color: #261b1b;
   color: #ffffff;
-  padding: 150px 10%;
+  padding: 80px 10%; /* antes era 150px */
   font-family: 'Flamenco', cursive;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto; /* antes era 100vh */
   box-sizing: border-box;
 }
 
@@ -86,9 +150,8 @@ body {
   justify-content: space-between;
   gap: 150px;
   flex-wrap: wrap;
-  flex-direction: row-reverse; /* <-- adicione esta linha */
+  flex-direction: row-reverse;
 }
-
 
 .sobre-texto {
   flex: 1;
@@ -118,13 +181,11 @@ body {
 .sobre-imagem img {
   width: 400px;
   border-radius: 40px;
-  position: relative;
-  z-index: 3;
 }
 
 .pata-bg {
   position: absolute;
-  top: 0px;
+  top: 0px; /* AQUI você controla a altura */
   left: 350px;
   width: 700px;
   opacity: 0.1;
@@ -138,19 +199,13 @@ body {
   color: #ffffff;
 }
 
-/* --- SEÇÃO QUERO ADOTAR --- */
-
+/* ======== QUERO ADOTAR ======== */
 .adotar-section {
-  position: relative; /* <-- ESSENCIAL para o fundo funcionar */
-  background-color: #fff;
-  padding: 100px 60px;
-  text-align: center;
-  overflow: hidden; /* mantém o fundo no lugar */
-}
-
-.adotar-section * {
   position: relative;
-  z-index: 2;
+  background-color: #FFF9F3;
+  padding: 60px 60px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .adotar-titulo {
@@ -169,7 +224,6 @@ body {
   line-height: 1.6;
 }
 
-/* Cards */
 .adotar-cards {
   display: flex;
   justify-content: center;
@@ -205,7 +259,6 @@ body {
   line-height: 1.5;
 }
 
-/* Botão */
 .botao-adotar {
   display: inline-block;
   background-color: #FFBB00;
@@ -226,14 +279,434 @@ body {
 
 .patinhas-bg {
   background-image: url("../assets/patas.png");
-  background-repeat: repeat;
-  background-size: 250px; /* ajuste o tamanho aqui */
+  background-size: 250px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+
   opacity: 0.08;
+
   position: absolute;
-  top: 0;
+  bottom: -80px; /* AQUI funciona agora */
+
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 300px; /* altura menor */
+
   z-index: 0;
+  pointer-events: none;
 }
 
+/* ======== lOJA ======== */
+
+/* Seção */
+.loja {
+  position: relative;
+  background-color: #261B1B;
+  text-align: center;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  overflow: hidden;
+}
+
+/* Pata de fundo */
+.loja-pata {
+  position: absolute;
+  top: 0px;       /* igual ao SOBRE */
+  left: 350px;    /* igual ao SOBRE */
+  width: 700px;
+  opacity: 0.08;  /* mesmo tom suave */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Título */
+.loja-title {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 42px;
+  color: #00C29F;
+  z-index: 2;
+}
+
+/* Texto */
+.loja-description {
+  font-family: "Flamenco", cursive;
+  font-size: 22px;
+  color: #ffffff;
+  max-width: 700px;
+  z-index: 2;
+  line-height: 1.4;
+}
+
+/* Imagem */
+.loja-img {
+  width: 600px;
+  border-radius: 40px;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Botão */
+.loja-btn {
+  display: inline-block;
+  background-color: #00C29F;
+  color: #261B1B;
+  font-family: 'Julius Sans One', sans-serif;
+  padding: 15px 35px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+/* Hover do botão */
+.loja-btn:hover {
+  background-color: #261B1B;
+  color: #00C29F;
+  transform: scale(1.05);
+}
+
+/* ======== VOLUNTARIADO ======== */
+.voluntario-section {
+  position: relative;
+  background-color: #FFF9F3;
+  padding: 100px 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.voluntario-titulo {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 40px;
+  color: #FFBB00;
+  margin-bottom: 40px;
+}
+
+.voluntario-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.vol-card {
+  background-color: #261B1B;
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  font-family: 'Flamenco', cursive;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.vol-card:hover {
+  transform: scale(1.05);
+}
+
+.vol-card h3 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #FFBB00;
+}
+
+.vol-card p {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.voluntario-pata {
+  position: absolute;
+  top: 10px;     /* ajusta a altura */
+  left: 700px;   /* ajusta posição horizontal */
+  width: 700px;  /* tamanho igual ao do SOBRE */
+  opacity: 0.10; /* mesma transparência */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.botao-voluntario {
+  display: inline-block;
+  background-color: #FFBB00;
+  color: #261B1B;
+  font-family: 'Julius Sans One', sans-serif;
+  padding: 15px 35px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.botao-voluntario:hover {
+  background-color: #261B1B;
+  color: #FFBB00;
+  transform: scale(1.05);
+}
+
+
+/* ======== CONTATO ======== */
+#contato {
+  position: relative;
+  padding: 60px 20px;
+  background-color: #261B1B;
+}
+
+.patinha-fundo {
+  position: absolute;
+  left: 250px;
+  bottom: 0;
+  width: 550px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.contato-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contato-titulo {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 40px;
+  color: #00C29F;
+  margin-bottom: 20px;
+}
+
+.contato-texto {
+  font-family: "Flamenco", cursive;
+  font-size: 22px;
+  color: #F5E9D7;
+  margin-bottom: 40px;
+}
+
+.contato-conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contato-mapa iframe {
+  width: 350px;
+  height: 250px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.contato-redes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icone {
+  font-size: 40px;
+  color: #00C29F;
+  transition: 0.3s;
+}
+
+.icone:hover {
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+
+  /* ======== NAVBAR ======== */
+  .header {
+    padding: 0 10px;
+    height: 70px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .navbar {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+
+  /* ======== HERO ======== */
+  .hero {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-btn {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+
+  .hero-img {
+    width: 250px;
+  }
+
+  .hero-pata {
+    width: 350px;
+    right: 0;
+    bottom: -20px;
+    opacity: 0.1;
+  }
+
+
+  /* ======== SOBRE ======== */
+  .sobre-section {
+    padding: 60px 30px;
+  }
+
+  .sobre-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .sobre-texto h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .sobre-texto p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: 280px;
+  }
+
+  .pata-bg {
+    width: 350px;
+    left: 10%;
+    top: 30px;
+  }
+
+
+  /* ======== ADOTAR ======== */
+  .adotar-section {
+    padding: 50px 20px;
+  }
+
+  .adotar-titulo {
+    font-size: 32px;
+  }
+
+  .adotar-texto {
+    font-size: 18px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .patinhas-bg {
+    height: 180px;
+    bottom: -40px;
+    background-size: 180px;
+  }
+
+
+  /* ======== LOJA ======== */
+  .loja {
+    padding: 60px 20px;
+  }
+
+  .loja-title {
+    font-size: 32px;
+  }
+
+  .loja-description {
+    font-size: 18px;
+  }
+
+  .loja-img {
+    width: 280px;
+  }
+
+  .loja-pata {
+    width: 350px;
+    left: 10%;
+    top: 20px;
+  }
+
+
+  /* ======== VOLUNTARIADO ======== */
+  .voluntario-section {
+    padding: 60px 20px;
+  }
+
+  .voluntario-titulo {
+    font-size: 32px;
+  }
+
+  .vol-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .vol-card p {
+    font-size: 16px;
+  }
+
+  .voluntario-pata {
+    width: 350px;
+    left: 20%;
+    top: 10px;
+  }
+
+
+  /* ======== CONTATO ======== */
+  #contato {
+    padding: 40px 20px;
+  }
+
+  .patinha-fundo {
+    width: 300px;
+    left: 5%;
+    opacity: 0.07;
+  }
+
+  .contato-titulo {
+    font-size: 32px;
+  }
+
+  .contato-texto {
+    font-size: 18px;
+  }
+
+  .contato-conteudo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contato-mapa iframe {
+    width: 280px;
+    height: 200px;
+  }
+}

@@ -4,6 +4,8 @@ import Sobre from "./components/Sobre";
 import QueroAdotar from "./components/QueroAdotar";
 import Loja from "./components/Loja"
 import "./index.css";
+import Voluntariado from "./components/Voluntariado";
+import Contato from "./components/Contato";
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
       <Sobre />
       <QueroAdotar />
       <Loja />
+      <Voluntariado />
+      <Contato />
     </>
   );
 }

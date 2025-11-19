@@ -1,5 +1,5 @@
 import pata from "../assets/patas.png";
-import gato from "../assets/gatosobre.png"; // substitua pelo nome certo da sua imagem
+import gato from "../assets/gatosobre.png"; 
 
 export default function Sobre() {
   return (
